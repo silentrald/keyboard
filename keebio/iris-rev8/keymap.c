@@ -19,11 +19,11 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_BASE] = LAYOUT(
-    KC_LGUI, KC_PGDN, KC_PGUP, KC_HOME, KC_END , KC_PSCR , /*                  */ KC_INS  , KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_DEL ,
+    KC_LGUI, KC_PGDN, KC_PGUP, KC_HOME, KC_END , KC_CAPS , /*                  */ KC_INS  , KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, KC_DEL ,
     KC_TAB , KC_Q   , KC_W   , KC_E   , KC_R   , KC_T    , /*                  */ KC_Y    , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSPC,
     KC_LSFT, KC_A   , KC_S   , KC_D   , KC_F   , KC_G    , /*                  */ KC_H    , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT,
-    KC_LALT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B    , KC_CAPS, /**/ QK_GESC, KC_N    , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT,
-                                        KC_LCTL, MO(_SYM), KC_ENT , /**/ KC_SPC , MO(_MSC), QK_GESC // NOTE: may be good for another layer if needed
+    KC_LALT, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B    , QK_GESC, /**/ QK_GESC, KC_N    , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT,
+                                        KC_LCTL, MO(_SYM), KC_ENT , /**/ KC_SPC , MO(_MSC), KC_RCTL
   ),
   [_SYM] = LAYOUT(
     _______, KC_1   , KC_2   , KC_3   , KC_4   , KC_5   , /*                  */ KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , _______,
@@ -35,8 +35,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_MSC] = LAYOUT(
     _______, _______, _______, _______, _______, _______, /*                  */ _______, _______, _______, _______, _______, _______,
     RGB_TOG, RGB_MOD, XXXXXXX, KC_VOLU, QK_BOOT, EE_CLR , /*                  */ KC_RALT, KC_F4  , KC_F5  , KC_F6  , KC_F12 , _______,
-    RGB_HUI, RGB_SAI, RGB_VAI, KC_VOLD, KC_BRIU, _______, /*                  */ XXXXXXX, KC_F1  , KC_F2  , KC_F3  , KC_F11 , XXXXXXX,
-    RGB_HUD, RGB_SAD, RGB_VAD, KC_MUTE, KC_BRID, _______, _______, /**/ _______, XXXXXXX, KC_F7  , KC_F8  , KC_F9  , KC_F10 , _______,
+    RGB_HUI, RGB_SAI, RGB_VAI, KC_VOLD, KC_BRIU, XXXXXXX, /*                  */ KC_PSCR, KC_F1  , KC_F2  , KC_F3  , KC_F11 , XXXXXXX,
+    RGB_HUD, RGB_SAD, RGB_VAD, KC_MUTE, KC_BRID, XXXXXXX, XXXXXXX, /**/ _______, XXXXXXX, KC_F7  , KC_F8  , KC_F9  , KC_F10 , _______,
                                         _______, _______, _______, /**/ _______, _______, _______
   )
 };
