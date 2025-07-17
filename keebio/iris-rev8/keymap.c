@@ -1,7 +1,8 @@
-#define TAPPING_TERM 55
+#define TAPPING_TERM 30
 #define TAPPING_TERM_PER_KEY
 #define COMBO_TERM 3
 #define COMBO_HOLD_TERM 175
+#define DEBOUNCE 27
 
 // #define CHORDAL_HOLD
 #define HOLD_ON_OTHER_KEY_PRESS
@@ -48,7 +49,11 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case MT_LSFT:
     case MT_RSFT:
-        return 25;
+      return 10;
+
+    case MT_LCTL:
+    case MT_RCTL:
+      return 15;
 
     default:
         return TAPPING_TERM;
@@ -61,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_F12 , KC_F1  , KC_F2  , KC_F3  , KC_F4  , KC_F5  , /*                  */ KC_F6  , KC_F7  , KC_F8  , KC_F9  , KC_F10 , KC_F11 ,
     KC_CAPS, KC_Q   , KC_W   , KC_E   , KC_R   , KC_T   , /*                  */ KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_DEL ,
     KC_TAB , KC_A   , MT_LALT, MT_LCTL, MT_LSFT, KC_G   , /*                  */ KC_H   , MT_RSFT, MT_RCTL, MT_RALT, KC_SCLN, KC_BSPC,
-    KC_LCTL, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , QK_GESC, /**/ KC_CAPS, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_LALT,
+    KC_LCTL, KC_Z   , KC_X   , KC_C   , KC_V   , KC_B   , QK_GESC, /**/ QK_GESC, KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_LALT,
                                         KC_LGUI, MO(SYM), KC_ENT , /**/ KC_SPC , MO(NAV), MO(MSC)
   ),
   [SYM] = LAYOUT(
